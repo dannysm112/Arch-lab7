@@ -1,42 +1,48 @@
-import psutil
+import os
 import sys
 
 def obtener_info_proceso(pid):
+    # Comando para obtener información del proceso
+    comando = f"ps -p {pid} -o comm,pid,ppid,user,%cpu,%mem,stat,cmd"
+
     try:
-        proceso = psutil.Process(pid)
+        # Ejecutar el comando y capturar la salida
+        salida = os.popen(comando).readlines()[1]
+        
+        # Dividir la salida en campos
+        campos = salida.split()
+        
+        # Extraer la información requerida
+        nombre_proceso = campos[0]
+        id_proceso = campos[1]
+        id_proceso_padre = campos[2]
+        usuario_propietario = campos[3]
+        porcentaje_cpu = campos[4]
+        consumo_memoria = campos[5]
+        estado = campos[6]
+        path_ejecutable = campos[7]
 
-        nombre = proceso.name()
-        pid = proceso.pid
-        ppid = proceso.ppid()
-        propietario = proceso.username()
-        uso_cpu = proceso.cpu_percent()
-        consumo_memoria = proceso.memory_info().rss
-        estado = proceso.status()
-        path_ejecutable = proceso.exe()
+        # Imprimir la información
+        print(f"Nombre del proceso: {nombre_proceso}")
+        print(f"ID del proceso: {id_proceso}")
+        print(f"Parent process ID: {id_proceso_padre}")
+        print(f"Usuario propietario: {usuario_propietario}")
+        print(f"Porcentaje de uso de CPU: {porcentaje_cpu}")
+        print(f"Consumo de memoria: {consumo_memoria}")
+        print(f"Estado: {estado}")
+        print(f"Path del ejecutable: {path_ejecutable}")
 
-        return {
-            'Nombre del proceso': nombre,
-            'ID del proceso': pid,
-            'Parent process ID': ppid,
-            'Usuario propietario del proceso': propietario,
-            'Porcentaje de uso de CPU': uso_cpu,
-            'Consumo de memoria': consumo_memoria,
-            'Estado': estado,
-            'Path del ejecutable': path_ejecutable
-        }
-    except psutil.NoSuchProcess as e:
-        return f"No se encontró un proceso con el ID {pid}"
+    except Exception as e:
+        print(f"Error al obtener información del proceso {pid}: {e}")
 
 if __name__ == "__main__":
+    # Verificar que se proporcione un argumento (ID del proceso)
     if len(sys.argv) != 2:
-        print("Uso: python script.py <ID del proceso>")
+        print("Uso: python script.py <PID>")
         sys.exit(1)
 
-    pid = int(sys.argv[1])
-    info_proceso = obtener_info_proceso(pid)
+    # Obtener el PID desde el argumento de línea de comandos
+    pid = sys.argv[1]
 
-    if isinstance(info_proceso, dict):
-        for key, value in info_proceso.items():
-            print(f"{key}: {value}")
-    else:
-        print(info_proceso)
+    # Llamar a la función para obtener información del proceso
+    obtener_info_proceso(pid)
