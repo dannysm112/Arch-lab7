@@ -3,7 +3,7 @@ Este script en Python utiliza la biblioteca psutil para obtener información det
 ## Requisitos
 -Python 3  
 -Módulos de python: `sys`, `psutil`  
--El módulo psutil se puede instalar usando pip install psutil  
+-El módulo `psutil` se puede instalar usando `pip install psutil`  
 ## Funcionamiento del código
 ### Bibliotecas
 ### Funciones
