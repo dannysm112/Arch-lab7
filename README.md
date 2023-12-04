@@ -30,6 +30,14 @@ Si el ID del proceso es válido y existe, se obtendrá información detallada so
 `Estado: en ejecución`  
 `Path del ejecutable: \ruta\ejemplo.exe`  
 
+Si el ID del proceso no válido la salida será algo así:  
+
+`El ID ingresado no es válido`  
+
+Si el proceso nno existe la salida será algo así:
+
+`No se encontró un proceso con el ID 1234`  
+
 **Nota:** estos datos son diferentes para cada proceso. Además, se deben tener permisos suficientes para acceder a la información del proceso.  
 Si el ID del proceso no es válido o no se encuentra ningún proceso con ese ID, se mostrará un mensaje de error, como el siguiente:  
 
@@ -71,7 +79,11 @@ Si el proceso (`proceso_de_prueba`) no está en ejecución, se vería algo como 
 
 Hasta que se ingrese la entrada `(Ctrl + C)` y se mostrará un mensaje como el siguiente:
 
-`Programa finalizado por el usuario`
+`Programa finalizado por el usuario`  
+
+Si ocurre un error al intentar ejecutar el proceso se verá lo siguiente:
+
+`Error al iniciar el proceso proceso_de_prueba: No such file or directory`  
 
 **Nota:** La salida se repetirá cada 5 segundos (según el intervalo de espera especificado en `time.sleep(5)`) mientras el programa esté en ejecución. Además, dependiendo del sistema operativo puede ser necesario ajustar el comando para iniciar el proceso y el nombre del proceso. 
 
@@ -120,7 +132,16 @@ Si el proceso termina por sí solo:
 `Finalizando proceso...`  
 `Proceso finalizado`  
 
-Después se mostraría en pantalla la gráfica que incluye el consumo de CPU y memoria con respecto al tiempo.
+Después se mostraría en pantalla la gráfica que incluye el consumo de CPU y memoria con respecto al tiempo.  
+
+En caso de que ocurra un error al intentar el ejecutar el binario ingresado se mostrará el mensaje:  
+
+`Error al ejecutar ./mi_programa: No such file or directory`  
+
+Si el binario no corresponde a un ejecutable se mostrará lo siguiente:  
+
+`No se encontró el proceso ingresado`  
+
 **Nota:** Se debe tener en cuenta que la salida puede variar dependiendo del sistema operativo.
 
 ---
