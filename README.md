@@ -21,6 +21,7 @@ Si se tiene un proceso en ejecución (por ejemplo, con ID 1234) y se desea obten
 -Se ejecuta el script desde la línea de comandos con el ID del proceso como argumento. Así: `python3 informacion.py 1234`.  
 ## Salida del programa
 Si el ID del proceso es válido y existe, se obtendrá información detallada sobre ese proceso. La salida será algo así:  
+
 Nombre del proceso: ejemplo.exe  
 ID del proceso: 1234  
 Parent process ID: 5678  
@@ -29,8 +30,10 @@ Porcentaje de uso de CPU: 25.0
 Consumo de memoria: 123456789  
 Estado: en ejecución  
 Path del ejecutable: C:\ruta\a\e\ejemplo.exe  
+
 **Nota**: estos datos son diferentes para cada proceso.  
 Si el ID del proceso no es válido o no se encuentra ningún proceso con ese ID, se mostrará un mensaje de error, como el siguiente:  
+
 No se encontró un proceso con el ID 1234  
 
 ---
