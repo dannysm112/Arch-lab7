@@ -28,9 +28,9 @@ Si el ID del proceso es válido y existe, se obtendrá información detallada so
 `Porcentaje de uso de CPU: 25.0`  
 `Consumo de memoria: 123456789`  
 `Estado: en ejecución`  
-`Path del ejecutable: C:\ruta\a\e\ejemplo.exe`  
+`Path del ejecutable: \ruta\ejemplo.exe`  
 
-**Nota**: estos datos son diferentes para cada proceso. Además, se deben tener permisos suficientes para acceder a la información del proceso.  
+**Nota:** estos datos son diferentes para cada proceso. Además, se deben tener permisos suficientes para acceder a la información del proceso.  
 Si el ID del proceso no es válido o no se encuentra ningún proceso con ese ID, se mostrará un mensaje de error, como el siguiente:  
 
 `No se encontró un proceso con el ID 1234`  
@@ -55,35 +55,22 @@ Se encarga de iniciar un nuevo proceso con el comando ingresado. Utiliza `subpro
 Verifica si un proceso con el nombre dado (`nombre_proceso`) está en ejecución. Itera sobre todos los procesos en ejecución y devuelve `True` si encuentra el proceso y sino devuelve `False`.  
 ### Bloque principal
 -**(`if __name__ == "__main__"`):**
-Verifica si el script se está ejecutando como el programa principal. Comprueba si se proporcionan los argumentos correctamente y maneja los posibles errores. Obtiene el nombre del proceso y el comando para ejecutarlo a partir de los argumentos de línea de comandos. En cada iteración del bucle verifica si el proceso está en ejecución. Si el proceso no está en ejecución, lo inicia utilizando la función `ejecutar_proceso`. Luego, espera 5 segundos antes de realizar la siguiente verificación. El programa se interrumpe al ingresar `Ctrl + C`.  
+Verifica si el script se está ejecutando como el programa principal. Comprueba si se proporcionan los argumentos correctamente y maneja los posibles errores. Obtiene el nombre del proceso y el comando para ejecutarlo a partir de los argumentos de línea de comandos. En cada iteración del bucle verifica si el proceso está en ejecución. Si el proceso no está en ejecución, lo inicia utilizando la función `ejecutar_proceso`. Luego, espera 5 segundos antes de realizar la siguiente verificación. El programa se interrumpe al ingresar `(Ctrl + C)`.  
 ## Ejemplo de uso  
-El script espera que se le pase el ID de un proceso como argumento en la línea de comandos. Si se tiene un proceso (por ejemplo, un script con el nombre de `mi_script_de_prueba`) y se desea monitorear su estado se debe hacer lo siguiente:  
+El script espera que se le pase el ID de un proceso como argumento en la línea de comandos. Si se tiene un proceso, por ejemplo, con el nombre de `proceso_de_prueba` que dura 6 segundos en ejecución y se desea monitorear su estado se debe hacer lo siguiente:  
 -Se guarda el código en un archivo llamado, por ejemplo, `monitoreo.py`.  
--Se ejecuta el script desde la línea de comandos con el nombre del proceso y el comando para ejecutarlo como argumentos. Así: `python3 monitoreo.py mi_script_de_prueba "mi_script_de_prueba.py"`.  
+-Se ejecuta el script desde la línea de comandos con el nombre del proceso y el comando para ejecutarlo como argumentos. Así: `python3 monitoreo.py proceso_de_prueba "\ruta\proceso_de_prueba.exe"`.  
 ## Salida del programa
-1. Proceso en ejecución:
+Si el proceso (`proceso_de_prueba`) no está en ejecución, se vería algo como lo siguiente:  
+`El proceso proceso_de_prueba no está en ejecución. Iniciando...`  
+`El proceso proceso_de_prueba está en ejecución.`  
+`El proceso proceso_de_prueba no está en ejecución. Iniciando...`  
+`El proceso proceso_de_prueba está en ejecución.`  
+`...`
+Hasta que se ingrese la entrada `(Ctrl + C)` y se mostrará un mensaje como el siguiente:
+`Programa finalizado por el usuario`
 
-El proceso <nombre_proceso> está en ejecución.
-
-Donde `<nombre_proceso>` es el nombre del proceso que estás monitoreando.
-
-2. Proceso no en ejecución (iniciando):
-
-El proceso <nombre_proceso> no está en ejecución. Iniciando…
-Proceso <nombre_proceso> iniciado
-
-En este caso, el programa detecta que el proceso no está en ejecución, lo inicia y muestra un mensaje indicando que el proceso ha sido iniciado.
-
-3. Programa finalizado por el usuario:
-
-Programa finalizado por el usuario
-
-Si decides detener el programa manualmente con Ctrl + C, verás este mensaje antes de que el programa se cierre.
-
-Notas 
-
-La salida se repetirá cada 5 segundos (según el intervalo de espera especificado en time.sleep(5)) mientras el programa esté en ejecución. Ten en cuenta que, dependiendo del sistema operativo y la configuración específica, puede ser necesario ajustar el comando para iniciar el proceso y el nombre del proceso según tus necesidades.
-
+**Nota:** La salida se repetirá cada 5 segundos (según el intervalo de espera especificado en `time.sleep(5)`) mientras el programa esté en ejecución. Además, dependiendo del sistema operativo puede ser necesario ajustar el comando para iniciar el proceso y el nombre del proceso. 
 
 ---
 # Consumo de un proceso
