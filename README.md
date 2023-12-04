@@ -10,7 +10,7 @@ Este script en Python permite obtener información sobre un proceso específico.
 -**(`psutil`):** Permite acceder a procesos y el sistema operativo. Brinda datos como CPU, memoria, etc.   
 ### Funciones
 -**(`obtener_informacion_proceso`):**  
-Recibe el ID ingresado y utiliza la biblioteca psutil para obtener información sobre el proceso. Maneja la excepción `psutil.NoSuchProcess` en caso de que no se encuentre un proceso con el ID ingresado. Devuelve un diccionario con la información del proceso o un mensaje de error si no se encuentra el proceso.  
+Recibe el ID ingresado y utiliza la biblioteca `psutil` para obtener información sobre el proceso. Maneja la excepción `psutil.NoSuchProcess` en caso de que no se encuentre un proceso con el ID ingresado. Devuelve un diccionario con la información del proceso o un mensaje de error si no se encuentra el proceso.  
 ### Bloque principal
 -**(`if __name__ == "__main__"`):**  
 Verifica si el script se está ejecutando como el programa principal. Comprueba si se ingresó el ID correctamente e intenta convertir el argumento a un entero (ID del proceso). Maneja los posibles errores en ambas acciones. Llama a la función `obtener_informacion_proceso` e imprime la información del proceso o un mensaje de error, según sea el caso.  
