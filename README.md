@@ -6,7 +6,7 @@ Este script en Python permite obtener información sobre un proceso específico.
 -El módulo `psutil` se puede instalar usando `pip install psutil`.  
 ## Funcionamiento del código
 ### Bibliotecas
--**(`sys`):** Permite acceso variables y funciones que usa el intérprete. Se usará para recibir parámetros y salir del programa.  
+-**(`sys`):** Permite acceso a variables y funciones que usa el intérprete. Se usará para recibir parámetros y salir del programa.  
 -**(`psutil`):** Permite acceder a procesos y el sistema operativo. Brinda datos como CPU, memoria, etc.   
 ### Funciones
 -**(`obtener_informacion_proceso`):**  
