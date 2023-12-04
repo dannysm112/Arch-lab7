@@ -62,12 +62,15 @@ El script espera que se le pase el ID de un proceso como argumento en la línea 
 -Se ejecuta el script desde la línea de comandos con el nombre del proceso y el comando para ejecutarlo como argumentos. Así: `python3 monitoreo.py proceso_de_prueba "\ruta\proceso_de_prueba.exe"`.  
 ## Salida del programa
 Si el proceso (`proceso_de_prueba`) no está en ejecución, se vería algo como lo siguiente:  
+
 `El proceso proceso_de_prueba no está en ejecución. Iniciando...`  
 `El proceso proceso_de_prueba está en ejecución.`  
 `El proceso proceso_de_prueba no está en ejecución. Iniciando...`  
 `El proceso proceso_de_prueba está en ejecución.`  
 `...`
+
 Hasta que se ingrese la entrada `(Ctrl + C)` y se mostrará un mensaje como el siguiente:
+
 `Programa finalizado por el usuario`
 
 **Nota:** La salida se repetirá cada 5 segundos (según el intervalo de espera especificado en `time.sleep(5)`) mientras el programa esté en ejecución. Además, dependiendo del sistema operativo puede ser necesario ajustar el comando para iniciar el proceso y el nombre del proceso. 
