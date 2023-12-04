@@ -15,13 +15,11 @@ Recibe el ID ingresado y utiliza la biblioteca psutil para obtener información 
 -**(`if __name__ == "__main__"`):**  
 Verifica si el script se está ejecutando como el programa principal. Comprueba si se ingresó el ID correctamente. Intenta convertir el argumento a un entero (ID del proceso). Maneja el error si el ID ingresado no es un número. Llama a la función `obtener_informacion_proceso` e imprime la información del proceso o un mensaje de error, según sea el caso.  
 ## Ejemplo de uso
-El script espera que se le pase el ID de un proceso como argumento en la línea de comandos.
-Si se tiene un proceso en ejecución (con ID 1234) y se desea obtener información sobre él se debe hacer lo siguiente:
-
+El script espera que se le pase el ID de un proceso como argumento en la línea de comandos.  
+Si se tiene un proceso en ejecución (con ID 1234) y se desea obtener información sobre él se debe hacer lo siguiente:  
 -Se ejecuta el script desde la línea de comandos:
--Se guarda el código en un archivo llamado, por ejemplo, informacion.py
--Se ejecuta el script desde la línea de comandos con el ID del proceso como argumento. Así: `python3 informacion.py 1234`
-
+-Se guarda el código en un archivo llamado, por ejemplo, `informacion.py`.  
+-Se ejecuta el script desde la línea de comandos con el ID del proceso como argumento. Así: `python3 informacion.py 1234`.  
 ## Salida del programa
 ---
 # Monitoreo de un proceso
