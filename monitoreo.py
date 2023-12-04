@@ -27,7 +27,10 @@ if __name__ == "__main__":
     comando = sys.argv[2]
 
     while True:
-        if not verificar_proceso(nombre_proceso):
+        if verificar_proceso(nombre_proceso):
+            print(f"El proceso {nombre_proceso} está en ejecución.")
+        else:
             print(f"El proceso {nombre_proceso} no está en ejecución. Iniciando...")
             proceso = ejecutar_proceso(nombre_proceso, comando)
-        time.sleep(5) 
+        time.sleep(5)
+
