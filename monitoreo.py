@@ -15,7 +15,7 @@ def ejecutar_proceso(nombre_proceso, comando):
 def verificar_proceso(nombre_proceso):
     for proceso in psutil.process_iter(['pid', 'name']):
         if proceso.info['name'] == nombre_proceso:
-            return True
+            return proceso.info['status'] in {psutil.STATUS_RUNNING, psutil.STATUS_SLEEPING}
     return False
 
 if __name__ == "__main__":
