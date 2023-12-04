@@ -1,4 +1,5 @@
 # Información de un proceso
+Este script en Python utiliza la biblioteca psutil para obtener información detallada sobre un proceso dado su ID. Se brindan detalles como el nombre del proceso, ID del proceso, ID del proceso padre, usuario propietario, porcentaje de uso de CPU, consumo de memoria, estado y ruta del ejecutable.
 ## Requisitos
 ## Funcionamiento del código
 ### Bibliotecas
