@@ -17,7 +17,7 @@ Verifica si el script se está ejecutando como el programa principal. Comprueba 
 ## Ejemplo de uso
 El script espera que se le pase el ID de un proceso como argumento en la línea de comandos.  
 Si se tiene un proceso en ejecución (con ID 1234) y se desea obtener información sobre él se debe hacer lo siguiente:  
--Se ejecuta el script desde la línea de comandos:
+-Se ejecuta el script desde la línea de comandos:  
 -Se guarda el código en un archivo llamado, por ejemplo, `informacion.py`.  
 -Se ejecuta el script desde la línea de comandos con el ID del proceso como argumento. Así: `python3 informacion.py 1234`.  
 ## Salida del programa
