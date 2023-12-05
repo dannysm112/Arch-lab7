@@ -1,4 +1,4 @@
-# Información de un proceso
+# Información de un proceso (informacion.py)
 Este script en Python permite obtener información sobre un proceso específico. Se brindan detalles como el nombre del proceso, ID del proceso, ID del proceso padre, usuario propietario, porcentaje de uso de CPU, consumo de memoria, estado y ruta del ejecutable.
 ## Requisitos
 -Python 3.  
@@ -43,7 +43,7 @@ Si el proceso no existe la salida será algo así:
 **Nota:** estos datos son diferentes para cada proceso. Además, se deben tener permisos suficientes para acceder a la información del proceso.  
 
 ---
-# Monitoreo de un proceso
+# Monitoreo de un proceso (monitoreo.py)
 Este script en Python permite monitorear un proceso específico. Si el proceso no está en ejecución se inicia y, luego, se revisa periódicamente el estado del proceso. Si se detuvo, se inicia nuevamente.
 ## Requisitos
 -Python 3.  
@@ -89,7 +89,7 @@ Si ocurre un error al intentar ejecutar el proceso se verá lo siguiente:
 **Nota:** La salida se repetirá cada 5 segundos (según el intervalo de espera especificado en `time.sleep(5)`) mientras el programa esté en ejecución. Además, dependiendo del sistema operativo puede ser necesario ajustar el comando para iniciar el proceso y el nombre del proceso. También, se deben tener permisos suficientes para ejecutar el proceso.
 
 ---
-# Consumo de un proceso
+# Consumo de un proceso (consumo.py)
 Este programa en Python permite monitorear el consumo de CPU y memoria de un proceso y permite visualizar la evolución de estos valores a lo largo del tiempo.  
 ## Requisitos
 -Python 3.  
@@ -106,11 +106,11 @@ Este programa en Python permite monitorear el consumo de CPU y memoria de un pro
 -**(`ejecutar_binario`):**  
 Esta función toma la ruta de un ejecutable como argumento, intenta ejecutarlo utilizando `subprocess.Popen` y devuelve el objeto de proceso. Si hay algún error durante la ejecución, imprime un mensaje de error y termina el programa.  
 -**(`registrar_consumo`):**  
-Esta función registra el consumo de CPU y memoria en un archivo de log. Obtiene el PID del proceso, el tiempo actual, el porcentaje de CPU utilizado y el consumo de memoria. Luego, escribe estos datos el archivo.  
+Esta función registra el consumo de CPU y memoria en un archivo de log. Obtiene el PID del proceso, el tiempo actual, el porcentaje de CPU utilizado y el consumo de memoria. Luego, escribe estos datos en el archivo.  
 -**(`graficar_consumo`):**  
 Esta función lee los datos registrados en el archivo de log y utiliza `matplotlib.pyplot` para generar un gráfico que muestra la evolución del consumo de CPU y memoria a lo largo del tiempo.  
 ### Bloque principal
--**(`if __name__ == "__main__"`):**
+-**(`if __name__ == "__main__"`):**  
 Verifica si el script se está ejecutando como el programa principal. Comprueba si se proporcionan los argumentos correctamente y maneja los posibles errores. Se ejecuta el binario y periódicamente se registra el consumo de CPU y memoria en un archivo llamado `registro_consumo.log` mientras el proceso se esté ejecutando. El programa se interrumpe al ingresar `(Ctrl + C)`. Finalmente, se genera el gráfico del consumo de CPU y memoria con respecto al tiempo. 
 ## Ejemplo de uso  
 El script espera que se le pase un ejecutable como argumento en la línea de comandos. Si se tiene un ejecutable llamado `mi_programa` y se desea monitorear su consumo de CPU y memoria se debe hacer lo siguiente:  
