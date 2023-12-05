@@ -61,7 +61,7 @@ Se encarga de iniciar un nuevo proceso con el comando ingresado. Utiliza `subpro
 -**(`monitorear_proceso`):**  
 Verifica si un proceso con el nombre dado (`nombre_proceso`) está en ejecución. Itera sobre todos los procesos en ejecución y devuelve `True` si encuentra el proceso y sino devuelve `False`.  
 ### Bloque principal
--**(`if __name__ == "__main__"`):**
+-**(`if __name__ == "__main__"`):**  
 Verifica si el script se está ejecutando como el programa principal. Comprueba si se proporcionan los argumentos correctamente y maneja los posibles errores. Obtiene el nombre del proceso y el comando para ejecutarlo a partir de los argumentos de línea de comandos. En cada iteración del bucle verifica si el proceso está en ejecución. Si el proceso no está en ejecución, lo inicia utilizando la función `ejecutar_proceso`. Luego, espera 5 segundos antes de realizar la siguiente verificación. El programa se interrumpe al ingresar `(Ctrl + C)`.  
 ## Ejemplo de uso  
 El script espera que se le pase el nombre y el comando para ejecutar un proceso como argumentos en la línea de comandos.  
