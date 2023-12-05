@@ -144,6 +144,6 @@ Si el binario no corresponde a un ejecutable se mostrará lo siguiente:
 
 `No se encontró el proceso ingresado`  
 
-**Nota:** Se debe tener en cuenta que la salida puede variar dependiendo del sistema operativo. Además, dependiendo del sistema operativo puede ser necesario ajustar el comando para iniciar el proceso. También, se deben tener permisos suficientes para ejecutar el proceso.
+**Nota:** Se debe tener en cuenta que la salida puede variar dependiendo del sistema operativo. Además, dependiendo del sistema operativo puede ser necesario ajustar el comando para iniciar el proceso. También, se deben tener permisos suficientes para ejecutar el proceso. Finalmente, es importante utilizar el "shebang" adecuado para indicar el intérprete a utilizar. Por ejemplo, para un script en Python se utilizaría `#!/usr/bin/python3`.
 
 ---
