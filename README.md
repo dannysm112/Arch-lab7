@@ -120,7 +120,7 @@ El script espera que se le pase un ejecutable como argumento en la línea de com
 
 A medida que se ejecuta el programa se guardarán los datos del consumo de CPU y memoria en un archivo.
 ## Salida del programa
-Si el binario se puede ejecutar y el usuario finaliza el proceso manualmente se verá algo como lo siguiente:
+Si el binario se puede ejecutar y el usuario finaliza el proceso manualmente se verá algo como lo siguiente:  
 
 `Ejecutando el binario: ./mi_programa`  
 `^C`
