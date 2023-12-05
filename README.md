@@ -114,8 +114,10 @@ Esta función lee los datos registrados en el archivo de log y utiliza `matplotl
 Verifica si el script se está ejecutando como el programa principal. Comprueba si se proporcionan los argumentos correctamente y maneja los posibles errores. Se ejecuta el binario y periódicamente se registra el consumo de CPU y memoria en un archivo llamado `registro_consumo.log` mientras el proceso se esté ejecutando. El programa se interrumpe al ingresar `(Ctrl + C)`. Finalmente, se genera el gráfico del consumo de CPU y memoria con respecto al tiempo. 
 ## Ejemplo de uso  
 El script espera que se le pase un ejecutable como argumento en la línea de comandos. Si se tiene un ejecutable llamado `mi_programa` y se desea monitorear su consumo de CPU y memoria se debe hacer lo siguiente:  
+
 -Se guarda el código en un archivo llamado, por ejemplo, `consumo.py`.  
 -Se ejecuta el script desde la línea de comandos con el ejecutable como argumento. Así: `python3 consumo.py ./mi_programa`.  
+
 A medida que se ejecuta el programa se guardarán los datos del consumo de CPU y memoria en un archivo.
 ## Salida del programa
 Si el binario se puede ejecutar se mostrará y el usuario finaliza el proceso manualmente:
